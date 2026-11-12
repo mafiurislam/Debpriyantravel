@@ -104,9 +104,9 @@
           </div>
 
           <div class="d-flex flex-wrap gap-3">
-            <a href="#booking-form-section" class="btn btn-warning btn-lg fw-bold px-4 py-3 shadow text-dark rounded-pill">
+            <button class="btn btn-warning btn-lg fw-bold px-4 py-3 shadow text-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#quickBookingModal">
               <i class="fa-solid fa-calendar-check me-2"></i> Book Online Now
-            </a>
+            </button>
             <a href="tel:9433053668" class="btn btn-outline-light btn-lg fw-bold px-4 py-3 rounded-pill">
               <i class="fa-solid fa-phone-volume me-2"></i> Call: 9433053668
             </a>
@@ -116,126 +116,6 @@
         <div class="col-lg-6">
           <div class="hero-banner-image-container">
             <img src="assets/images/banners/banner-main.jpg" alt="Debpriyan Travels Kolkata Bus and Car Booking Banner" class="img-fluid">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= QUICK BOOKING WIDGET ================= -->
-  <section id="booking-form-section" class="booking-widget-wrapper">
-    <div class="container">
-      <div class="booking-widget-card">
-        <ul class="nav nav-tabs booking-nav-tabs" id="bookingTabs" role="tablist">
-          <li class="nav-item">
-            <button class="nav-link active" id="bus-tab" data-bs-toggle="tab" data-bs-target="#tab-bus" type="button" role="tab"><i class="fa-solid fa-bus"></i> Bus Booking</button>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link" id="car-tab" data-bs-toggle="tab" data-bs-target="#tab-bus" type="button" role="tab" onclick="$('#widgetServiceType').val('Car Rental');"><i class="fa-solid fa-car"></i> Car Rental</button>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link" id="tempo-tab" data-bs-toggle="tab" data-bs-target="#tab-bus" type="button" role="tab" onclick="$('#widgetServiceType').val('Tempo Traveller');"><i class="fa-solid fa-van-shuttle"></i> Tempo Traveller</button>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link" id="corporate-tab" data-bs-toggle="tab" data-bs-target="#tab-bus" type="button" role="tab" onclick="$('#widgetServiceType').val('Corporate / Govt Office');"><i class="fa-solid fa-building"></i> Corporate / Govt</button>
-          </li>
-        </ul>
-
-        <form id="heroBookingForm" class="booking-form">
-          <div class="row g-3 align-items-end">
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <label class="form-label">Service Type</label>
-              <select class="form-select" id="widgetServiceType" required>
-                <option value="All India Bus Ticket Booking">All India Bus Booking</option>
-                <option value="Car Rental (Dzire/Innova/EV)">Car Rental (Dzire/Innova/EV)</option>
-                <option value="Tempo Traveller Hire">Tempo Traveller Hire</option>
-                <option value="Govt Office Travel">Govt Office Travel</option>
-                <option value="Corporate Office Travel">Corporate Office Travel</option>
-                <option value="Gari Vara (Daily/Monthly)">Daily / Monthly Gari Vara</option>
-                <option value="Tour Package">Holiday Tour Package</option>
-              </select>
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <label class="form-label">Pickup City</label>
-              <input type="text" class="form-control" id="widgetPickup" placeholder="e.g. Kolkata" value="Kolkata" required>
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <label class="form-label">Destination</label>
-              <input type="text" class="form-control" id="widgetDestination" placeholder="e.g. Siliguri / Digha" required>
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <label class="form-label">Travel Date</label>
-              <input type="date" class="form-control" id="widgetDate" required>
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <label class="form-label">Contact Phone</label>
-              <input type="tel" class="form-control" id="widgetPhone" placeholder="Your Phone Number" required>
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <button type="submit" class="btn btn-book-action w-100">
-                <i class="fa-brands fa-whatsapp"></i> Book on WhatsApp
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= 4 VALUE PROPOSITIONS STRIP (FROM BANNER 3) ================= -->
-  <section class="container mt-4 mb-4">
-    <div class="value-props-strip">
-      <div class="row g-3">
-        <div class="col-lg-3 col-md-6">
-          <div class="value-prop-item">
-            <div class="value-prop-icon">
-              <i class="fa-solid fa-bus"></i>
-            </div>
-            <div>
-              <h6>ALL INDIA BUS BOOKING</h6>
-              <p>Tickets available for Siliguri, Digha, Delhi, Mumbai &amp; more.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div class="value-prop-item">
-            <div class="value-prop-icon">
-              <i class="fa-solid fa-car-side"></i>
-            </div>
-            <div>
-              <h6>ALL TYPE CAR RENTAL</h6>
-              <p>Innova Crysta, Dzire, EV Sedans for local &amp; outstation.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div class="value-prop-item">
-            <div class="value-prop-icon">
-              <i class="fa-solid fa-calendar-check"></i>
-            </div>
-            <div>
-              <h6>INSTANT RESERVATION</h6>
-              <p>Confirmed booking for bus, car &amp; luxury tempo.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div class="value-prop-item">
-            <div class="value-prop-icon">
-              <i class="fa-solid fa-bolt"></i>
-            </div>
-            <div>
-              <h6>EV &amp; PREMIUM VEHICLES</h6>
-              <p>Modern eco-friendly EV &amp; luxury cabs available 24x7.</p>
-            </div>
           </div>
         </div>
       </div>

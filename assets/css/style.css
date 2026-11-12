@@ -203,7 +203,7 @@ a {
   position: relative;
   background: linear-gradient(135deg, #09346d 0%, #0d5bb8 60%, #1e70d4 100%);
   color: var(--white);
-  padding: 60px 0 100px;
+  padding: 65px 0 70px;
   overflow: hidden;
 }
 
