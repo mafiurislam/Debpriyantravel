@@ -28,6 +28,16 @@ $(document).ready(function () {
     $('html, body').animate({ scrollTop: 0 }, 500);
   });
 
+  // Hero Carousel Auto-slide Initialization
+  const heroCarouselEl = document.getElementById('heroCarousel');
+  if (heroCarouselEl && typeof bootstrap !== 'undefined') {
+    new bootstrap.Carousel(heroCarouselEl, {
+      interval: 4000,
+      ride: 'carousel',
+      pause: false
+    });
+  }
+
   // 3. Set Minimum Date to Today for Date Inputs
   const today = new Date().toISOString().split('T')[0];
   $('input[type="date"]').attr('min', today);
