@@ -150,6 +150,23 @@ $(document).ready(function () {
     }
   });
 
+  // 9. Video Review Modal Player
+  $(document).on('click', '.video-thumb-card', function () {
+    const videoUrl = $(this).attr('data-video-url');
+    if (videoUrl) {
+      $('#videoIframe').attr('src', videoUrl);
+      const videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
+      videoModal.show();
+    }
+  });
+
+  const videoModalEl = document.getElementById('videoModal');
+  if (videoModalEl) {
+    videoModalEl.addEventListener('hidden.bs.modal', function () {
+      $('#videoIframe').attr('src', '');
+    });
+  }
+
   console.log('Debpriyan Travels site initialized successfully.');
 });
 
