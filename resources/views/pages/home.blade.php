@@ -151,7 +151,7 @@
 
       <div class="row g-4">
         @foreach($specializations as $spec)
-        <div class="col-lg-3 col-sm-6">
+        <div class="col-lg-4 col-md-6">
           <div class="category-card">
             <img src="{{ asset($spec->image) }}" alt="{{ $spec->title }}">
             <h4>{{ $spec->title }}</h4>

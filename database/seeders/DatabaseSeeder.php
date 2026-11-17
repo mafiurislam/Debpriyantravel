@@ -130,6 +130,18 @@ class DatabaseSeeder extends Seeder
         // 5. Core Services
         $services = [
             [
+                'title' => 'All India Ticket Booking',
+                'bengali_subtitle' => 'বাস টিকিট বুকিং (সমগ্র ভারত)',
+                'category' => 'Bus Booking',
+                'description' => '',
+                'icon' => 'fa-solid fa-bus',
+                'image' => 'assets/images/banners/sujata-bus-banner.jpg',
+                'btn_text' => 'Book Bus Ticket',
+                'whatsapp_message' => 'Hello Debpriyan Travels, I want to book an All India Bus Ticket. Please share available bus routes, timings, and fare details.',
+                'sort_order' => 1,
+                'is_active' => true,
+            ],
+            [
                 'title' => 'Car Rental (Self Drive / With Driver)',
                 'bengali_subtitle' => 'গাড়ি ভাড়া (সেলফ ড্রাইভ / ড্রাইভার সহ)',
                 'category' => 'Fleet / Rental',
@@ -138,7 +150,7 @@ class DatabaseSeeder extends Seeder
                 'image' => 'assets/images/sedan.jpg',
                 'btn_text' => 'Book Car Rental',
                 'whatsapp_message' => 'Hello Debpriyan Travels, I want to inquire about Dzire Car Rental (Private / Commercial - Rs.150/hr & Rs.15/km). Please confirm availability.',
-                'sort_order' => 1,
+                'sort_order' => 2,
                 'is_active' => true,
             ],
             [
@@ -150,7 +162,7 @@ class DatabaseSeeder extends Seeder
                 'image' => 'assets/images/suv.jpg',
                 'btn_text' => 'Official Booking',
                 'whatsapp_message' => 'Hello Debpriyan Travels, I want to inquire about Government Office Travel Support and official transport contracts.',
-                'sort_order' => 2,
+                'sort_order' => 3,
                 'is_active' => true,
             ],
             [
@@ -162,7 +174,7 @@ class DatabaseSeeder extends Seeder
                 'image' => 'assets/images/pkg-airport.jpg',
                 'btn_text' => 'Corporate Inquiry',
                 'whatsapp_message' => 'Hello Debpriyan Travels, I want to inquire about Corporate Office Business Travel and employee transport solutions.',
-                'sort_order' => 3,
+                'sort_order' => 4,
                 'is_active' => true,
             ],
             [
@@ -174,7 +186,7 @@ class DatabaseSeeder extends Seeder
                 'image' => 'assets/images/tempo-large.jpg',
                 'btn_text' => 'Book Monthly / Daily',
                 'whatsapp_message' => 'Hello Debpriyan Travels, I want to inquire about Gari Vara Daily/Monthly Rental options and package rates.',
-                'sort_order' => 4,
+                'sort_order' => 5,
                 'is_active' => true,
             ],
             [
@@ -186,7 +198,7 @@ class DatabaseSeeder extends Seeder
                 'image' => 'assets/images/slider/slide-tourist-coach.jpg',
                 'btn_text' => 'Book for Events',
                 'whatsapp_message' => 'Hello Debpriyan Travels, I want to inquire about Wedding and Event Fleet booking (Luxury cars and Tempo Travellers).',
-                'sort_order' => 5,
+                'sort_order' => 6,
                 'is_active' => true,
             ],
         ];
@@ -200,19 +212,10 @@ class DatabaseSeeder extends Seeder
             [
                 'title' => 'Bus Ticket Booking',
                 'bengali_subtitle' => 'বাস টিকিট বুকিং',
-                'image' => 'assets/images/tempo-small.jpg',
+                'image' => 'assets/images/fleet/tempo-9-seater.jpg',
                 'btn_text' => 'Explore Routes',
                 'btn_link' => 'bus-booking',
                 'sort_order' => 1,
-                'is_active' => true,
-            ],
-            [
-                'title' => 'All India Ticket Booking',
-                'bengali_subtitle' => 'বাস টিকিট বুকিং (সমগ্র ভারত)',
-                'image' => 'assets/images/banners/sujata-bus.jpg',
-                'btn_text' => 'Book Bus Ticket',
-                'btn_link' => 'https://wa.me/919433053668?text=Hello%20Debpriyan%20Travels,%20I%20want%20to%20book%20an%20All%20India%20Bus%20Ticket.%20Please%20share%20routes%20and%20seat%20availability.',
-                'sort_order' => 2,
                 'is_active' => true,
             ],
             [
@@ -221,16 +224,16 @@ class DatabaseSeeder extends Seeder
                 'image' => 'assets/images/sedan.jpg',
                 'btn_text' => 'View Cabs',
                 'btn_link' => 'car-rental',
-                'sort_order' => 3,
+                'sort_order' => 2,
                 'is_active' => true,
             ],
             [
                 'title' => 'Bus Rental',
                 'bengali_subtitle' => 'বাস ভাড়া',
-                'image' => 'assets/images/tempo-small.jpg',
+                'image' => 'assets/images/fleet/tempo-16-seater.webp',
                 'btn_text' => 'Hire Bus',
                 'btn_link' => 'services',
-                'sort_order' => 4,
+                'sort_order' => 3,
                 'is_active' => true,
             ],
         ];
