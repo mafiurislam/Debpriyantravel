@@ -1,0 +1,100 @@
+<?php
+
+namespace Tests\Feature;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Database\Seeders\DatabaseSeeder;
+use App\Models\User;
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    use RefreshDatabase;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->seed(DatabaseSeeder::class);
+    }
+
+    /**
+     * Test all front-end website pages return 200 OK.
+     */
+    public function test_all_frontend_pages_return_200_ok(): void
+    {
+        $pages = [
+            '/',
+            '/about',
+            '/services',
+            '/packages',
+            '/car-rental',
+            '/bus-booking',
+            '/contact',
+        ];
+
+        foreach ($pages as $url) {
+            $response = $this->get($url);
+            $response->assertStatus(200);
+            $response->assertSee('Debpriyan');
+        }
+    }
+
+    /**
+     * Test admin login and dashboard access.
+     */
+    public function test_admin_authentication_flow(): void
+    {
+        // 1. Unauthenticated access to /admin redirects to /admin/login
+        $response = $this->get('/admin/dashboard');
+        $response->assertRedirect('/admin/login');
+
+        // 2. Login with user ID adminat@12345 and password admin123
+        $response = $this->post('/admin/login', [
+            'login' => 'adminat@12345',
+            'password' => 'admin123',
+        ]);
+        $response->assertRedirect('/admin/dashboard');
+        $this->assertAuthenticated();
+
+        // 3. Test all admin sections return 200 OK
+        $adminUrls = [
+            '/admin/dashboard',
+            '/admin/sliders',
+            '/admin/route-highlight',
+            '/admin/services',
+            '/admin/specializations',
+            '/admin/videos',
+            '/admin/vehicles',
+            '/admin/packages',
+            '/admin/settings',
+            '/admin/inquiries',
+        ];
+
+        foreach ($adminUrls as $url) {
+            $resp = $this->get($url);
+            $resp->assertStatus(200);
+        }
+    }
+
+    /**
+     * Test customer inquiry submission.
+     */
+    public function test_customer_can_submit_inquiry(): void
+    {
+        $response = $this->post('/inquiry/submit', [
+            'name' => 'Sourav Ganguly',
+            'phone' => '9876543210',
+            'email' => 'sourav@example.com',
+            'service_type' => 'Car Rental',
+            'pickup_location' => 'Behala',
+            'drop_location' => 'Airport',
+            'journey_date' => '2026-12-01',
+            'message' => 'Need Dzire with AC',
+        ]);
+
+        $this->assertDatabaseHas('inquiries', [
+            'phone' => '9876543210',
+            'name' => 'Sourav Ganguly',
+        ]);
+    }
+}
